@@ -1,4 +1,4 @@
-package com.royts;
+/*package com.royts;
 import java.io.IOException;
 import javax.servlet.http.*;
 
@@ -9,3 +9,4 @@ public class SimpleBlogServlet extends HttpServlet {
 		resp.getWriter().println("Hello, world(roy)");
 	}
 }
+*/

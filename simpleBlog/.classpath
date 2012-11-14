@@ -28,5 +28,9 @@
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jsr107cache-1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jta-1.1.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-dev.jar"/>
+	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-user.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
