@@ -39,7 +39,7 @@ public class Post {
 		return content;
 	}
 
-	@XmlElement(name ="autorsmail")
+	@XmlElement(name ="authormail")
 	public String getAuthorsMail() {
 		return authorsMail;
 	}
