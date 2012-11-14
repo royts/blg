@@ -1,36 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/appengine-api-1.0-sdk-1.7.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/appengine-api-labs.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/appengine-endpoints.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.7.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/asm-3.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/asm-4.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/datanucleus-api-jdo-3.1.0-m3.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/datanucleus-api-jpa-3.1.0-m3.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/datanucleus-appengine-2.1.0-final.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/datanucleus-core-3.1.0-m5.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/geronimo-jpa_2.0_spec-1.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jackson-core-asl-1.9.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jackson-jaxrs-1.9.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jackson-xc-1.9.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jdo-api-3.0.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jersey-client-1.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jersey-core-1.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jersey-json-1.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jersey-server-1.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jersey-servlet-1.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jettison-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jsr107cache-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/jta-1.1.jar"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-dev.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
-	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-user.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/appEngine/gwt-dev.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/appEngine/gwt-servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/appEngine/gwt-user.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-ant-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-jasper-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-jasper-el-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-ant-launcher-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-tomcat-juli-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/el-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/servlet-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/appengine-local-runtime-shared.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/appengine-tools-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/appengine-api-labs/v1/appengine-api-labs.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/appengine-endpoints/v1/appengine-endpoints.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/jsr107/v1/jsr107cache-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/jsr107/v1/appengine-jsr107cache-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/user/appengine-api-1.0-sdk-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/datanucleus-api-jdo-3.1.0-m3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/datanucleus-api-jpa-3.1.0-m3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/asm-4.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/datanucleus-core-3.1.0-m5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/jdo-api-3.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/datanucleus-appengine-2.1.0-final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/jta-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/opt/user/datanucleus/v2/geronimo-jpa_2.0_spec-1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/asm-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-core-asl-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-jaxrs-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-mapper-asl-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-xc-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-client-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-core-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-json-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-server-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-servlet-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jettison-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jsr311-api-1.1.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
