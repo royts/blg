@@ -3,7 +3,6 @@ package com.royts.rest;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Persistence;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -30,8 +29,8 @@ public class PostAPI {
 	
 	public List<Post> getAllPosts() {
 		List<Post> posts = new ArrayList<Post>();
-		posts.add(new Post("title", "content", "mail"));
-		posts.add(new Post("title", "content", "mail"));
+		posts.add(new Post(new Long(102030),"title", "content", "mail"));
+		posts.add(new Post(new Long(102030), "title", "content", "mail"));
 		
 		return posts;
 	}
@@ -42,7 +41,7 @@ public class PostAPI {
 	public Response getSinglePost(@PathParam("id") final String postId) {
 		
 		return new BlgResponse(HttpStatus.SC_BAD_GATEWAY,
-				"my message", new Post(postId, "one", "one")).getResponse();
+				"my message", new Post(new Long(postId),"one", "one", "one")).getResponse();
 		//return new Post(postId, "one", "one");
 	}
 	
@@ -64,7 +63,7 @@ public class PostAPI {
 			return new BlgResponse(HttpStatus.SC_BAD_REQUEST,RestApiConsts.POST_CREATE_MESSAGE_NO_AUTHOR_MAIL).getResponse();
 		}
 		
-		Post post = new Post (postTitle, postContent, postAuthorMail);
+		Post post = new Post (new Long(-1), postTitle, postContent, postAuthorMail);
 		
 		Storage storage = StorageFactory.get();
 		

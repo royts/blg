@@ -9,10 +9,15 @@ public class Post {
 	String title;
 	String content;
 	String authorsMail;
+	long id;
 
 	public Post () {} //for jaxB
-	public Post(String title, String content, String authorsMail) {
+	
+	public Post(Long id, String title, String content, String authorsMail) {
 		
+		if(id == null) {
+			throw new IllegalArgumentException ("posts ID null is illegal");
+		}
 		if(title == null) {
 			throw new IllegalArgumentException ("posts title null is illegal");
 		}
@@ -23,6 +28,7 @@ public class Post {
 			throw new IllegalArgumentException ("authors mail null is illegal");
 		}
 		
+		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.authorsMail = authorsMail;
@@ -42,6 +48,10 @@ public class Post {
 	@XmlElement(name ="authormail")
 	public String getAuthorsMail() {
 		return authorsMail;
+	}
+
+	public long getId() {
+		return this.id;
 	}
 
 }
