@@ -1,17 +1,10 @@
 package com.royts.storage;
 
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+
 public class StorageFactory {
 
 	public static Storage get() {
-//DatastoreService datastore = null;
-//		
-//		try{
-//		datastore  = DatastoreServiceFactory.getDatastoreService();
-//		} catch (Exception ex){
-//			logger.severe("Error while getting appEngine data store. Ex:" + ex.toString());
-//		}
-//	}
-		return null;
+		return new GAEDataStore(DatastoreServiceFactory.getDatastoreService());
 	}
-
 }

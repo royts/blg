@@ -67,7 +67,7 @@ public class PostAPI {
 		
 		Storage storage = StorageFactory.get();
 		
-		storage.savePost (post);
+		//storage.savePost (post);
 		
 
 		return new BlgResponse(HttpStatus.SC_OK, RestApiConsts.POST_CREATE_MESSAGE_CREATED_SUCCESS).getResponse();

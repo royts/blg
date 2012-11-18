@@ -4,6 +4,6 @@ import com.royts.Post;
 
 public interface Storage {
 
-	void savePost(Post post);
+	Post savePost(Post post) throws StorageException, postNotFoundException;
 
 }

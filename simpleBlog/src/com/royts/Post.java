@@ -34,6 +34,13 @@ public class Post {
 		this.authorsMail = authorsMail;
 	}
 
+	public Post(Long postId, Post copyFromPost) {
+		this.id = postId;
+		this.title = copyFromPost.getTitle();
+		this.content = copyFromPost.getContent();
+		this.authorsMail = copyFromPost.getAuthorsMail();
+	}
+
 	@XmlElement(name ="title")
 	
 	public String getTitle() {
