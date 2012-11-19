@@ -27,6 +27,15 @@ public class BlgResponse {
 		this.data = data;
 	}
 
+	public BlgResponse(int httpStatus, Object data) {
+		this.status = httpStatus;
+		this.data = data;
+	}
+
+	public BlgResponse(int httpStatus) {
+		this.status = httpStatus;
+	}
+
 	@XmlElement(name = "message")
 	public String getMessage() {
 		return this.message;

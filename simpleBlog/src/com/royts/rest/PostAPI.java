@@ -1,8 +1,5 @@
 package com.royts.rest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -13,64 +10,50 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.http.HttpStatus;
-
-import com.royts.Post;
-import com.royts.storage.Storage;
+import com.royts.rest.request.PostCreateRequest;
+import com.royts.rest.request.PostDetailsReadRequest;
+import com.royts.rest.request.PostReadRequest;
 import com.royts.storage.StorageFactory;
 
 @Path(RestApiConsts.PATH_POST)
 public class PostAPI {
 
-	@Path("/")
+	//@Path("/")
 	@GET
-	@Consumes({MediaType.APPLICATION_JSON})
-	@Produces({MediaType.APPLICATION_JSON})
-	
-	public List<Post> getAllPosts() {
-		List<Post> posts = new ArrayList<Post>();
-		posts.add(new Post(new Long(102030),"title", "content", "mail"));
-		posts.add(new Post(new Long(102030), "title", "content", "mail"));
-		
-		return posts;
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response getAllPosts() {
+
+		PostDetailsReadRequest request = new PostDetailsReadRequest(StorageFactory.get());
+
+		return request.getResponse().getResponse();
 	}
-	
-	@Path("/{id}")
+
+	@Path("{id}")
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response getSinglePost(@PathParam("id") final String postId) {
+
+		PostReadRequest request = new PostReadRequest(StorageFactory.get(), postId);
+		return request.getResponse().getResponse();
 		
-		return new BlgResponse(HttpStatus.SC_BAD_GATEWAY,
-				"my message", new Post(new Long(postId),"one", "one", "one")).getResponse();
-		//return new Post(postId, "one", "one");
 	}
-	
-	@Path("/")
+
+	//@Path("/")
 	@POST
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response createNewPost(
-			@FormParam( RestApiConsts.PARAM_POST_TITLE) String postTitle,
+			@FormParam(RestApiConsts.PARAM_POST_TITLE) String postTitle,
 			@FormParam(RestApiConsts.PARAM_POST_CONTENT) String postContent,
 			@FormParam(RestApiConsts.PARAM_POST_AUTHHOR_MAIL) String postAuthorMail) {
-		
-		if(postTitle == null) {
-			return new BlgResponse(HttpStatus.SC_BAD_REQUEST,RestApiConsts.POST_CREATE_MESSAGE_NO_TITLE).getResponse();
-		}
-		if(postContent == null) {
-			return new BlgResponse(HttpStatus.SC_BAD_REQUEST,RestApiConsts.POST_CREATE_MESSAGE_NO_CONTENT).getResponse();
-		}
-		if(postAuthorMail == null) {
-			return new BlgResponse(HttpStatus.SC_BAD_REQUEST,RestApiConsts.POST_CREATE_MESSAGE_NO_AUTHOR_MAIL).getResponse();
-		}
-		
-		Post post = new Post (new Long(-1), postTitle, postContent, postAuthorMail);
-		
-		Storage storage = StorageFactory.get();
-		
-		//storage.savePost (post);
-		
 
-		return new BlgResponse(HttpStatus.SC_OK, RestApiConsts.POST_CREATE_MESSAGE_CREATED_SUCCESS).getResponse();
+		PostCreateRequest request = new PostCreateRequest(
+				StorageFactory.get(),
+				postTitle,
+				postContent,
+				postAuthorMail);
+
+		return request.getResponse().getResponse();
 	}
 
 }

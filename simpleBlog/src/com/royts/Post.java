@@ -9,7 +9,7 @@ public class Post {
 	String title;
 	String content;
 	String authorsMail;
-	long id;
+	Long id;
 
 	public Post () {} //for jaxB
 	
@@ -57,7 +57,8 @@ public class Post {
 		return authorsMail;
 	}
 
-	public long getId() {
+	@XmlElement(name ="id")
+	public Long getId() {
 		return this.id;
 	}
 

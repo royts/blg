@@ -1,4 +1,10 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<!-- Jersey -->
 	<servlet>
 		<servlet-name>Jersey REST Service</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -7,10 +13,6 @@
 			<param-value>com.royts.rest</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet>
-		<servlet-name>home</servlet-name>
-		<jsp-file>/index.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>home</servlet-name>
@@ -21,6 +23,30 @@
 		<servlet-name>Jersey REST Service</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+	<!-- <servlet>
+	<servlet-name>SystemServiceServlet</servlet-name>
+	<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+	<init-param>
+	<param-name>services</param-name>
+	<param-value/>
+	</init-param>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>SystemServiceServlet</servlet-name>
+	<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping> -->
+	<!-- <servlet>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+			<param-name>services</param-name>
+			<param-value/>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping> -->
  <servlet>
   <servlet-name>SystemServiceServlet</servlet-name>
   <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
