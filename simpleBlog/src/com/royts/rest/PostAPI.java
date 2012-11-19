@@ -21,7 +21,8 @@ public class PostAPI {
 	//@Path("/")
 	@GET
 	@Consumes({ MediaType.APPLICATION_JSON })
-	@Produces({ MediaType.APPLICATION_JSON })
+	//@Produces({ MediaType.APPLICATION_JSON })
+	@Produces(MediaType.TEXT_XML)
 	public Response getAllPosts() {
 
 		PostDetailsReadRequest request = new PostDetailsReadRequest(StorageFactory.get());

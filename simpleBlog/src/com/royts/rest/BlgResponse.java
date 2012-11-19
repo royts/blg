@@ -13,19 +13,8 @@ public class BlgResponse {
 
 	int status;
 	Object data;
-	String message;
 
 	public BlgResponse () {} // for jaxB
-	
-	public BlgResponse(int httpStatus, String message) {
-		this(httpStatus, message, null);
-	}
-
-	public BlgResponse(int httpStatus, String message, Object data) {
-		this.status = httpStatus;
-		this.message = message;
-		this.data = data;
-	}
 
 	public BlgResponse(int httpStatus, Object data) {
 		this.status = httpStatus;
@@ -36,18 +25,13 @@ public class BlgResponse {
 		this.status = httpStatus;
 	}
 
-	@XmlElement(name = "message")
-	public String getMessage() {
-		return this.message;
-	}
-
 	@XmlElement(name = "data")
 	public Object getData() {
 		return this.data;
 	}
 
 	public Response getResponse() {
-		return Response.status(this.status).entity(this).build();
+		return Response.status(this.status).entity(this.data).build();
 	}
 
 }

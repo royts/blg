@@ -15,8 +15,8 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import com.royts.Post;
+import com.royts.PostDetails;
 import com.royts.rest.BlgResponse;
-import com.royts.rest.PostsDetails;
 import com.royts.rest.request.PostDetailsReadRequest;
 
 public class TestPostDetailsReadRequest {
@@ -45,8 +45,9 @@ public class TestPostDetailsReadRequest {
 	@Test
 	public void testGetResponse_noPosts_emptyResponse () {
 		BlgResponse response = request.getResponse();
-		PostsDetails postsDetails = (PostsDetails)response.getData();
-		assertTrue(postsDetails.getPostsDetails().size() == 0);
+		@SuppressWarnings("unchecked")
+		List<PostDetails> postsDetails = (List<PostDetails>)response.getData();
+		assertTrue(postsDetails.size() == 0);
 	}
 	
 	@Test
@@ -56,7 +57,8 @@ public class TestPostDetailsReadRequest {
 		
 		BlgResponse response = request.getResponse();
 		assertEquals (response.getResponse().getStatus() , HttpStatus.SC_OK);
-		PostsDetails postsDetails = (PostsDetails) response.getData();
-		assertTrue(postsDetails.getPostsDetails().size() == 2);
+		@SuppressWarnings("unchecked")
+		List<PostDetails> postsDetails = (List<PostDetails>) response.getData();
+		assertTrue(postsDetails.size() == 2);
 	}
 }
