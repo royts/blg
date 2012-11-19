@@ -3,18 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/asm-3.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-core-asl-1.8.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-jaxrs-1.8.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-mapper-asl-1.8.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-xc-1.8.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-client-1.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-core-1.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-json-1.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-server-1.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-servlet-1.10.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jettison-1.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jersey/jsr311-api-1.1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/lib/shared/jsp/repackaged-appengine-ant-1.7.1.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="file:/home/roy/.eclipse/org.eclipse.platform_3.7.0_155965261/plugins/com.google.appengine.eclipse.sdkbundle_1.7.1/appengine-java-sdk-1.7.1/docs/javadoc/"/>
@@ -141,5 +129,17 @@
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-dev.jar"/>
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
 	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwt-user.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/asm-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-core-asl-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-jaxrs-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-mapper-asl-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jackson-xc-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-client-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-core-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-json-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-server-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jersey-servlet-1.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jettison-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jersey/jsr311-api-1.1.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
