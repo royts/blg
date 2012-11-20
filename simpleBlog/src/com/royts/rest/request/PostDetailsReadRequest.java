@@ -20,7 +20,7 @@ public class PostDetailsReadRequest implements BlgRequest {
 
 	@Override
 	public BlgResponse getResponse() {
-		List<PostDetails> posts = storage.getAllPostsDetails();
+		List<PostDetails> posts = storage.getPostsDetails(10);
 		GenericEntity<List<PostDetails>> entity = new GenericEntity<List<PostDetails>>(posts) {};
 		return new BlgResponse(
 				HttpStatus.SC_OK,

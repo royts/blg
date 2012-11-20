@@ -47,7 +47,7 @@ public class TestGAEDataStore {
 	@Test
 	public void testSavePost_newPost_saved() throws StorageException, postNotFoundException {
 		Post newPost = new Post(new Long(-1), "My title", "myContent",
-				"Author mail",new Date());
+				"Author mail", new Date());
 		PreparedQuery preparedQuery = this.dataStore.prepare(new Query("Post"));
 
 		storage.savePost(newPost);
@@ -57,20 +57,21 @@ public class TestGAEDataStore {
 		assertEquals((String) entity.getProperty("PostTitle"), newPost.getTitle());
 		assertEquals((String) entity.getProperty("PostContent"), newPost.getContent());
 		assertEquals((String) entity.getProperty("PostAuthorMail"), newPost.getAuthorsMail());
-		assertEquals((Date)entity.getProperty("postCreateDate"), newPost.getCreateDate());
+		assertEquals((Date) entity.getProperty("postCreateDate"), newPost.getCreateDate());
 	}
 
-	public void testGetAllPostsDetails_createMultipleWithDifferentCreateDate_getThemOrderedByCreateDate() throws StorageException, postNotFoundException {
-		
+	@Test
+	public void testGetPostsDetails_createMultipleWithDifferentCreateDate_getThemOrderedByCreateDate() throws StorageException, postNotFoundException {
+
 		long DAY_IN_MS = 1000 * 60 * 60 * 24;
-		
+
 		Post postEarlier = new Post(
 				new Long(-1),
 				"title 1",
 				"content 1",
 				"Author mail 1",
 				new Date(System.currentTimeMillis() - (7 * DAY_IN_MS)));
-		
+
 		Post postMiddle = new Post(
 				new Long(-1),
 				"title 2",
@@ -82,19 +83,36 @@ public class TestGAEDataStore {
 				"title 3",
 				"content 3",
 				"Author mail 3",
-				new Date());
-		
+				new Date(System.currentTimeMillis()));
+
 		this.storage.savePost(postLatest);
 		this.storage.savePost(postEarlier);
 		this.storage.savePost(postMiddle);
 
-		List<PostDetails> posts = this.storage.getAllPostsDetails();
+		List<PostDetails> posts = this.storage.getPostsDetails(10);
 
 		assertTrue(posts.size() == 3);
 
-		assertEquals(posts.get(0).getPostTitle(), postEarlier.getTitle());
+		assertEquals(posts.get(0).getPostTitle(), postLatest.getTitle());
 		assertEquals(posts.get(1).getPostTitle(), postMiddle.getTitle());
-		assertEquals(posts.get(2).getPostTitle(), postLatest.getTitle());
+		assertEquals(posts.get(2).getPostTitle(), postEarlier.getTitle());
+	}
+
+	@Test
+	public void testGetPostsDetails_create15Posts_getPostsByNumber() throws StorageException, postNotFoundException {
+
+		Post post;
+
+		for (int i = 0; i < 15; i++) {
+			post = new Post(new Long(-1), "title 1", "content 1", "Author mail 1", new Date());
+			this.storage.savePost(post);
+		}
+
+		List<PostDetails> posts = this.storage.getPostsDetails(10);
+		assertTrue(posts.size() == 10);
+
+		posts = this.storage.getPostsDetails(14);
+		assertTrue(posts.size() == 14);
 	}
 
 	@Test(expected = IllegalArgumentException.class)

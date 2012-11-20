@@ -62,13 +62,13 @@ public class GAEDataStore implements Storage {
 	}
 
 	@Override
-	public List<PostDetails> getAllPostsDetails() {
+	public List<PostDetails> getPostsDetails(int numberOfPosts) {
 		List<PostDetails> postsDetails = new ArrayList<PostDetails>();
 
 		Query query = new Query(GAEConsts.POST_ENTITY_NAME).addSort(GAEConsts.POST_CREATE_DATE_PROP_NAME, Query.SortDirection.DESCENDING);
 
 		PreparedQuery preparedQuery = this.appEngineDS.prepare(query);
-		List<Entity> postsEntities = preparedQuery.asList(FetchOptions.Builder.withDefaults());
+		List<Entity> postsEntities = preparedQuery.asList(FetchOptions.Builder.withLimit(numberOfPosts));
 
 		for (Entity entity : postsEntities) {
 			postsDetails.add(createPostDetailsFromEntity(entity));
@@ -122,5 +122,4 @@ public class GAEDataStore implements Storage {
 			throw new StorageException(ex2);
 		}
 	}
-
 }
