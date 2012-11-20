@@ -1,5 +1,6 @@
 package com.royts;
 
+import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -10,10 +11,11 @@ public class Post {
 	String content;
 	String authorsMail;
 	Long id;
+	private Date createDate;
 
 	public Post () {} //for jaxB
 	
-	public Post(Long id, String title, String content, String authorsMail) {
+	public Post(Long id, String title, String content, String authorsMail, Date createDate) {
 		
 		if(id == null) {
 			throw new IllegalArgumentException ("posts ID null is illegal");
@@ -27,11 +29,15 @@ public class Post {
 		if(authorsMail == null) {
 			throw new IllegalArgumentException ("authors mail null is illegal");
 		}
+		if(createDate == null) {
+			throw new IllegalArgumentException ("create date null is illegal");
+		}
 		
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.authorsMail = authorsMail;
+		this.createDate = createDate;
 	}
 
 	public Post(Long postId, Post copyFromPost) {
@@ -55,6 +61,11 @@ public class Post {
 	@XmlElement(name ="authormail")
 	public String getAuthorsMail() {
 		return authorsMail;
+	}
+	
+	@XmlElement(name ="createDate")
+	public Date getCreateDate() {
+		return this.createDate;
 	}
 
 	@XmlElement(name ="id")

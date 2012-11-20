@@ -1,0 +1,20 @@
+#postBody, #postTitle, #authorsMail{
+	width:100%;
+	border-color: black;
+	border-style: solid;
+	border-width: thin;
+	margin-bottom:20px;
+	
+}
+#postCreateForm {
+/*	width:200px;*/
+	margin-left: auto;
+	margin-right: auto;
+	
+	
+}
+
+
+#btnSave {
+	font-size: 100%;
+}

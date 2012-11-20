@@ -2,6 +2,7 @@ package com.royts.storage;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
+import java.util.Date;
 import java.util.List;
 
 import com.google.appengine.api.datastore.DatastoreFailureException;
@@ -31,7 +32,6 @@ public class GAEDataStore implements Storage {
 		}
 
 		Entity entity = new Entity(GAEConsts.POST_ENTITY_NAME);
-		// getEntityByPostId(postToSave.getId());
 
 		setEntityProperties(postToSave, entity);
 
@@ -39,30 +39,6 @@ public class GAEDataStore implements Storage {
 
 		return new Post(new Long(entity.getKey().getId()), postToSave);
 	}
-
-	// private Entity getEntityByPostId(long postId) throws StorageException {
-	// Entity entity = null;
-
-	// if (postId < 0) {
-	// entity = new Entity(GAEConsts.POST_ENTITY_NAME);
-	// } else {
-	// try {
-	//
-	// return
-	// this.appEngineDS.get(KeyFactory.createKey(GAEConsts.POST_ENTITY_NAME,
-	// postId));
-	//
-	// } catch (ConcurrentModificationException ex1) {
-	// throw new StorageException(ex1);
-	// } catch (DatastoreFailureException ex2) {
-	// throw new StorageException(ex2);
-	// } catch (EntityNotFoundException e) {
-	// throw new postNotFoundException(e);
-	// }
-	// }
-
-	// return entity;
-	// }
 
 	private void savePostToDB(Entity entity) throws StorageException {
 		try {
@@ -81,13 +57,15 @@ public class GAEDataStore implements Storage {
 		entity.setProperty(GAEConsts.POST_CONTENT_PROP_NAME, post.getContent());
 		entity.setProperty(GAEConsts.POST_AUTHOR_MAIL_PROP_NAME,
 				post.getAuthorsMail());
+		entity.setProperty(GAEConsts.POST_CREATE_DATE_PROP_NAME,
+				post.getCreateDate());
 	}
 
 	@Override
 	public List<PostDetails> getAllPostsDetails() {
 		List<PostDetails> postsDetails = new ArrayList<PostDetails>();
 
-		Query query = new Query(GAEConsts.POST_ENTITY_NAME);
+		Query query = new Query(GAEConsts.POST_ENTITY_NAME).addSort(GAEConsts.POST_CREATE_DATE_PROP_NAME, Query.SortDirection.DESCENDING);
 
 		PreparedQuery preparedQuery = this.appEngineDS.prepare(query);
 		List<Entity> postsEntities = preparedQuery.asList(FetchOptions.Builder.withDefaults());
@@ -120,7 +98,8 @@ public class GAEDataStore implements Storage {
 	private PostDetails createPostDetailsFromEntity(Entity postEntity) {
 		return new PostDetails(
 				new Long(postEntity.getKey().getId()),
-				(String) postEntity.getProperty(GAEConsts.POST_TITLE_PROP_NAME));
+				(String) postEntity.getProperty(GAEConsts.POST_TITLE_PROP_NAME),
+				(Date) postEntity.getProperty(GAEConsts.POST_CREATE_DATE_PROP_NAME));
 	}
 
 	private Post createPostFromEntity(Entity postEntity) {
@@ -128,7 +107,8 @@ public class GAEDataStore implements Storage {
 				new Long(postEntity.getKey().getId()),
 				(String) postEntity.getProperty(GAEConsts.POST_TITLE_PROP_NAME),
 				(String) postEntity.getProperty(GAEConsts.POST_CONTENT_PROP_NAME),
-				(String) postEntity.getProperty(GAEConsts.POST_AUTHOR_MAIL_PROP_NAME));
+				(String) postEntity.getProperty(GAEConsts.POST_AUTHOR_MAIL_PROP_NAME),
+				(Date) postEntity.getProperty(GAEConsts.POST_CREATE_DATE_PROP_NAME));
 	}
 
 	private Entity getPostEntity(Long entityKey) throws EntityNotFoundException, StorageException {

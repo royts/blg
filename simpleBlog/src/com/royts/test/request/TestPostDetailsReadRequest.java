@@ -3,6 +3,7 @@ package com.royts.test.request;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.http.HttpStatus;
@@ -52,8 +53,21 @@ public class TestPostDetailsReadRequest {
 	
 	@Test
 	public void testGetResponse_twoPosts_responseContainsPosts () {
-		storageMock.addPost(new Post(new Long(1010), "title 1", "content 1", "mai1@1"));
-		storageMock.addPost(new Post(new Long(1011), "title 2", "content 2", "mai1@2"));
+		storageMock.addPost(new Post(new Long(1010), "title 1", "content 1", "mai1@1", new Date()));
+		storageMock.addPost(new Post(new Long(1011), "title 2", "content 2", "mai1@2", new Date()));
+		
+		BlgResponse response = request.getResponse();
+		assertEquals (response.getResponse().getStatus() , HttpStatus.SC_OK);
+		@SuppressWarnings("unchecked")
+		List<PostDetails> postsDetails = (List<PostDetails>) response.getData();
+		assertTrue(postsDetails.size() == 2);
+	}
+	
+	@Test
+	public void testGetResponse_postsWithDifferentCreateDate_getPostsByCreateDateLatestFirst () {
+		storageMock.addPost(new Post(new Long(1010), "title 1", "content 1", "mai1@1", new Date()));
+		storageMock.addPost(new Post(new Long(1011), "title 2", "content 2", "mai1@2", new Date()));
+		storageMock.addPost(new Post(new Long(1011), "title 3", "content 2", "mai1@2", new Date()));
 		
 		BlgResponse response = request.getResponse();
 		assertEquals (response.getResponse().getStatus() , HttpStatus.SC_OK);
@@ -62,3 +76,4 @@ public class TestPostDetailsReadRequest {
 		assertTrue(postsDetails.size() == 2);
 	}
 }
+

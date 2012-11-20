@@ -7,5 +7,6 @@ public class GAEConsts {
 	public static final String POST_TITLE_PROP_NAME = "PostTitle";
 	public static final String POST_CONTENT_PROP_NAME = "PostContent";
 	public static final String POST_AUTHOR_MAIL_PROP_NAME = "PostAuthorMail";
+	public static final String POST_CREATE_DATE_PROP_NAME = "postCreateDate";
 
 }

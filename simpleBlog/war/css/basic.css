@@ -1,0 +1,9 @@
+body {
+	font-family: sans-serif;
+	font-size: 14pt;
+	color: #212121;
+}
+#content {
+	width: 500px;
+	margin: 0 auto;
+}

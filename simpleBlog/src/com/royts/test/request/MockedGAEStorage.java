@@ -36,7 +36,7 @@ public class MockedGAEStorage implements Storage {
 	public List<PostDetails> getAllPostsDetails() {
 		List<PostDetails> postsDetails = new ArrayList<PostDetails>();
 		for (Post post : posts) {
-			postsDetails.add(new PostDetails(post.getId(), post.getTitle()));
+			postsDetails.add(new PostDetails(post.getId(), post.getTitle(), post.getCreateDate()));
 		}
 		return postsDetails;
 	}

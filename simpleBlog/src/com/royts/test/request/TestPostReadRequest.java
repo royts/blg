@@ -1,5 +1,7 @@
 package com.royts.test.request;
 
+import java.util.Date;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.apache.http.HttpStatus;
@@ -41,7 +43,7 @@ public class TestPostReadRequest {
 	@Test
 	public void testGetResponse_postExists_responseWithPost () {
 		String postId = "102030";
-		Post post = new Post (new Long(postId),  "my title", "my content", "authors@mail" );
+		Post post = new Post (new Long(postId),  "my title", "my content", "authors@mail" ,new Date());
 		storageMock.addPost(post);
 		
 		PostReadRequest request = new PostReadRequest (storageMock, postId);
@@ -55,5 +57,7 @@ public class TestPostReadRequest {
 				.getContent(), post.getContent());
 		assertEquals(((Post)request.getResponse().getData())
 				.getAuthorsMail(), post.getAuthorsMail());
+		assertEquals(((Post)request.getResponse().getData())
+				.getCreateDate(), post.getCreateDate());
 	}
 }
