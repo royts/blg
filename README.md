@@ -1,2 +1,1 @@
-blg
-===
+http://outsimpleblog.appspot.com/
