@@ -1,13 +1,13 @@
 function PostCreatePage(postClient) {
 	that = {};
 	that.postClient = postClient;
-	that.render = function() {
-
+	that.render = function(contentElement) {
+		
 		var template = new EJS({
 			url : 'js/templates/postCreateTemplate.ejs'
 		});
 
-		return template.render();
+		contentElement.html(template.render());
 	}
 
 	that.validateValues = function(postTitle, postBody, postAuthor) {

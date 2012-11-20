@@ -1,7 +1,9 @@
 <link rel='stylesheet' type='text/css' href='css/postsList.css' />
-<div id="postsList">
-	<b>Title:&nbsp;&nbsp;</b>
-	<a href="#view/10">the title</a>
-	<b>&nbsp;&nbsp; by:</b>
-	my name
-</div>
+<ul>
+	<% for(var i=0; i
+	<postDetails.length; i++) {%>
+		<li>
+			<a href="#view/<%= postDetails[i]["id"] %>"><%= postDetails[i]["title"] %></a>
+		</li>
+		<% } %>
+</ul>

@@ -9,12 +9,12 @@ function PostClient(httpClient) {
 	that.httpClient = httpClient;
 
 	that.getAllPostsDetails = function(successHandler, errorHandler) {
-		httpClient.get(that.POST_URL, successHandler, errorHandler);
+		httpClient.get(this.POST_URL, successHandler, errorHandler);
 	}
 
 	that.getPostById = function(postId, successHandler, errorHandler) {
 
-		httpClient.get(that.POST_URL + '/' + postId, successHandler,
+		httpClient.get(this.POST_URL + '/' + postId, successHandler,
 				errorHandler);
 
 	}

@@ -5,8 +5,7 @@ $(document).ready(function() {
 	
 	var serveRequest = function(url) {
 		var page = router.getPage(url, postClient);
-		var html = page.render();
-		$("#content").html(html);
+		page.render($("#content"));
 	};
 
 	serveRequest(document.URL);
@@ -15,7 +14,7 @@ $(document).ready(function() {
 		
 		console.log("clicked");
 		serveRequest($(this).attr("href"));
-		//event.preventDefault();
+		event.preventDefault();
 	});
 	
 	var url = document.URL;

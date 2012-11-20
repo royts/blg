@@ -22,10 +22,6 @@
 
 		<a id="homeLink" href="">home</a> &nbsp;&nbsp; <a href="/#new">add new post</a>
 		<h1 align="center">- Simple Blog -</h1>
-		<br/>
-		<br/>
-
-
 		<div id="content">
 			<div align='center' >
 				<h1> Loading posts </h1>

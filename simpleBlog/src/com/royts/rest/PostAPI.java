@@ -22,7 +22,7 @@ public class PostAPI {
 	@GET
 	@Consumes({ MediaType.APPLICATION_JSON })
 	//@Produces({ MediaType.APPLICATION_JSON })
-	@Produces(MediaType.TEXT_XML)
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response getAllPosts() {
 
 		PostDetailsReadRequest request = new PostDetailsReadRequest(StorageFactory.get());
