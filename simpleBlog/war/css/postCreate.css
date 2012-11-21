@@ -13,8 +13,9 @@
 	
 	
 }
-
-
 #btnSave {
 	font-size: 100%;
+}
+#error {
+	color:red;
 }
