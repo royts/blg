@@ -1,6 +1,7 @@
 function PostCreatePage(postClient) {
 	that = {};
 	that.postClient = postClient;
+	
 	that.render = function(contentElement) {
 		
 		var template = new EJS({

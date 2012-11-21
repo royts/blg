@@ -7,34 +7,28 @@ function Router() {
 
 	that.getPage = function(url, postClient) {
 
-		if(url.indexOf(this.RESOURCE_DELIMITER) === -1){
+		var pageToReturn;
 
+		if (!url.contains(this.RESOURCE_DELIMITER)) {
 			return PostsListPage(postClient);
+		}
 
+		if (url.contains(this.CREATE_PAGE_URL)) {
+			pageToReturn = PostCreatePage(postClient);
 		} else {
-			
-			var urlParts = url.split(this.RESOURCE_DELIMITER);
-			
-			var resourcePath = urlParts[urlParts.length - 1];
-			
-			if(resourcePath.indexOf(this.CREATE_PAGE_URL) !=  -1) {
-				return PostCreatePage(postClient);
-			} 
-			
-			else if( resourcePath.indexOf( this.VIEW_PAGE_URL_PREFIX != -1 ) ){
-				
-				var postViewParts = resourcePath.split (this.VIEW_PAGE_URL_PREFIX);
-				
-				if(postViewParts.length > 1) {
-					
-					var postId = postViewParts[1];
-					postId = postId.substring(1);
-					return SinglePostPage(postClient,postId);
-				}
+			if (url.contains(this.VIEW_PAGE_URL_PREFIX)) {
+				pageToReturn = this.createSinglePage(url, postClient);
+			} else {
+				pageToReturn = PostsListPage(postClient);
 			}
 		}
-		
-		return PostsListPage(postClient)
+
+		return pageToReturn;
+	}
+
+	that.createSinglePage = function(url, postClient) {
+		var postId = url.split(this.VIEW_PAGE_URL_PREFIX)[1];
+		return new SinglePostPage(postClient, postId);
 	}
 
 	return that;
