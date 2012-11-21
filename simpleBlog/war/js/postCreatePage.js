@@ -57,7 +57,7 @@ function PostCreatePage(postClient) {
 	}
 
 	that.saveFailed = function(jqXHR, textStatus, errorThrown) {
-		alert(jqXHR.responseText);
+		console.log(jqXHR.responseText);
 	}
 	
 	that.showError= function (message) {
